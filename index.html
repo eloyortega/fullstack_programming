@@ -4,7 +4,12 @@
 	<title>JS Cheat Sheet</title>
 </head>
 <body>
-<script type="text/javascript">
+	<h1>hello world</h1>
+<!--
+	<script src=script.js></script>
+-->
+	
+<script>
 	//this is a comment
 	
 	/* multi line 
@@ -92,6 +97,9 @@
 	document.write("<br>");
 	document.write(longstr.replace('fox','zorro'));
 	document.write("<br>");
+	document.write(longstr.replace(/o/g,'a'));
+	
+	document.write("<br>");
 	document.write(longstr.split(' '));
 	document.write("<hr>");
 
@@ -103,7 +111,11 @@
 	document.write("<br>");
 	document.write(arr.indexOf('child'));
 	document.write("<br>");
-	document.write(arr.push('granny'));
+	document.write(arr.indexOf('aunt'));
+	document.write("<br>");
+	document.write(arr.push(2));
+	document.write("<br>");
+	document.write(arr);
 	document.write("<br>");
 	arr[2] = "grandpa";
 	document.write(arr);
@@ -114,21 +126,22 @@
 	//multidimensional arrays
 	instruments = ['guitar','drums','bass'];
 	genre = ['rock','hip hop','classical'];
-	musicHobbies = [instruments,genre];
+	stars = ['Michael Jackson', 'Asap Rocky'];
+	musicHobbies = [instruments,genre,stars];
 	document.write(instruments);
 	document.write("<br>");
 	document.write(genre);
 	document.write("<br>");
 	document.write(musicHobbies);
 	document.write("<br>");
-	document.write(musicHobbies[0][1]);
+	document.write(musicHobbies[2][1]);
 	document.write("<hr>");
 
 	//objects
 	superhero = {
 		fname:'Clark',
 		lname:'Kent',
-		hname:'Super man',
+		hname:'Superman',
 		glasses:false,
 		powers:12,
 		weaknesses:2
@@ -192,7 +205,7 @@
 	document.write(5 < 10);
 	document.write("<br>");
 
-	document.write("5 is less than or equal to 10: ");
+	document.write("test: ");
 	document.write(5 <= 10);
 	document.write("<br>");
 
@@ -276,8 +289,9 @@
 	document.write('<b>Functions are blocks of code</b><br>');
 	document.write('<b>After defined call the function to execute: </b> <br>');
 	//basic function
+
 	function playFunc(){
-		no1 = 100;
+		no1 = 2;
 		var no2 = 1;
 		document.write('lets add things together: ');
 		document.write(no1 + no2);
@@ -315,9 +329,12 @@
 	document.write('<b>loops execute a set amount of times</b><br>');
 	//basic for loop example
 	document.write('<b>For loop example 1</b><br>');
+	
+	
 	for(var i = 0; i < 10; ++i){
 		document.write(i + '<br>');
 	};
+
 	document.write('<hr>');
 
 	//another example
@@ -348,20 +365,17 @@
 	document.write('<hr>');
 
 	//for/in loop
-	document.write('<b>For/In loop example</b>');
+	document.write('<b>For/In loop example</b><br>');
 	person = {
 		fname:'Peter',
 		lname:'Parker',
 		id: 1234
 	};
 
-	objKeyVal='';
-	for(key in person){
-		objKeyVal += person[key] + ' ';
-		document.write('<p>' + objKeyVal + '</p>');
+	for(k in person){
+		document.write(person[k] + '<br>');
 	}
 	document.write('<hr>');
-	document.write(objKeyVal);
 </script>
 </body>
 </html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<style type="text/css">
+#slideshow {
+  margin: 80px auto;
+  position: relative;
+  width: 540px;
+  height: 340px;
+  padding: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+#slideshow > .slide_images {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+}
+
+.slide_images img{
+	width: 100%;
+	height: 100%;
+}
+</style>
+
+<div id="slideshow">
+   <div class="slide_images">
+     <img src="images/kitty.jpg">
+   </div>
+   <div class="slide_images">
+     <img src="images/dolphin.jpg">
+   </div>
+   <div class="slide_images">
+     <img src="images/pupper.jpg">
+   </div>
+</div>
+<button id="next" >NEXT</button>
+	
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$("#slideshow > div:gt(0)").hide();
+
+$("#next").click(function(){
+	$('#slideshow > div:first').fadeOut(1000).next().fadeIn(1000).end().appendTo('#slideshow');
+});
+	
+	//setInterval(function() {
+//  $('#slideshow > div:first').fadeOut(1000).next().fadeIn(1000).end().appendTo('#slideshow');
+//}, 3000);
+</script>
+
+</body>
+</html>
