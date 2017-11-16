@@ -5,29 +5,32 @@
 </head>
 <body>
 	<h1>hello world</h1>
-<!--
+
+	<!--
 	<script src=script.js></script>
--->
-	
+	-->
+
 <script>
+//dev tools
+
 	//this is a comment
-	
-	/* multi line 
+
+	/* multi line
 	comment */
-	
+
 	//alert("hello world");
-	
+
 	console.log("hi bob");
-	
+
 	document.write("<h1>this renders as html</h1>");
-	
-	//variables
+
+//variables
 	x = 15;
 	y = 5;
 
 	document.write(x);
 	document.write("<hr>");
-	
+
 	//mathematics
 	document.write(x+y);
 	document.write("<br>");
@@ -47,14 +50,17 @@
 	document.write("<hr>");
 
 	//assignment operators
-	document.write(x+=12);
+	document.write(x);
+	document.write("<br>");
+	document.write(x=x+2);
+	document.write("<br>");
+	document.write(x+=2);
 	document.write("<hr>");
 
 	//order of operation
 	console.log(50+100/10);
 	console.log((50+100)/10);
 
-	
 	//boolean datatype
 	a = true;
 	document.write(a);
@@ -74,7 +80,7 @@
 	document.write("1"+"2");
 	document.write("<br>");
 	
-	document.write(x + Number('100'));
+	document.write(20 + Number('100'));
 	document.write("<br>");
 
 	document.write("i heard \"she said, \'meet me there\'\"");
@@ -101,6 +107,7 @@
 	
 	document.write("<br>");
 	document.write(longstr.split(' '));
+	console.log(longstr.split(' '));
 	document.write("<hr>");
 
 	//arrays
@@ -113,7 +120,7 @@
 	document.write("<br>");
 	document.write(arr.indexOf('aunt'));
 	document.write("<br>");
-	document.write(arr.push(2));
+	document.write(arr.push('granny'));
 	document.write("<br>");
 	document.write(arr);
 	document.write("<br>");
@@ -147,9 +154,9 @@
 		weaknesses:2
 	};
 
-	document.write(superhero['hname']);
+	document.write(superhero['fname']);
 	document.write("<br>");
-	document.write(superhero.lname);
+	document.write(superhero.fname);
 	document.write("<hr>");
 
 	//another example
@@ -157,9 +164,6 @@
 		firstn:"lady",
 		lastn:'gaga',
 		specialty:"imitating madonna",
-		fullname: function(){
-			return this.firstn + " " + this.lastn;
-		}
 	};
 	//add values to object
 	celeb['genre'] = "pop";
@@ -172,13 +176,8 @@
 	document.write(celeb.specialty);
 	document.write("<br>");
 	document.write(celeb.tophits);
-	document.write("<hr>");
-
-	//call an objects definition
-	document.write(celeb.fullname);
 	document.write("<br>");
-	//call an objects value
-	document.write(celeb.fullname());
+	console.log(celeb);
 	document.write("<hr>");
 
 	//comparisons
@@ -256,15 +255,10 @@
 	//the variable to check
 	myColor= "green";
 
-	//ternary shorthand
-	display = (myColor == 'red')? myColor + " is my favorite color!" : myColor + " is not my favorite color!";
-	document.write(display);
-	document.write("<hr>");
-
 	//if statement
 	if((myColor == "red") || (myColor == "blue") ){
 		document.write(myColor + " is my favorite color!");
-	} else if (myColor == "yellow") {
+	} else if (myColor == "orange") {
 		document.write(myColor + " is my least favorite color!");
 	} else {
 		document.write(myColor + " is not my favorite color!");
@@ -277,7 +271,7 @@
 		case 'blue':
 			document.write(myColor + " is my favorite color!");
 			break;
-		case 'yellow':
+		case 'orange':
 			document.write(myColor + " is my least favorite color!");
 			break;
 		default:
@@ -293,44 +287,38 @@
 	function playFunc(){
 		no1 = 2;
 		var no2 = 1;
-		document.write('lets add things together: ');
-		document.write(no1 + no2);
+		document.write('add stuff: ' + (no1 + no2));
 	};
+
 	playFunc();
 	document.write('<hr>');
 
-	//function with parameters and reutrns
-	function sum10(n1,n2){
-		return (n1 + n2) * 10;
+	//function with parameters and returns
+	function sum(a,b){
+		return a + b;
 	};
-	document.write(sum10(5,5));
+
+	document.write( sum(5,5) );
 	document.write('<hr>');
 
 	//function Expression or anonymous function
-	exFunc = function(p1){
-		document.write(p1 * 10);
+	exFunc = function(p){
+		document.write(p * 10);
 	};
+
 	exFunc(2);
 	document.write('<hr>');
 
 	//self-envoked function
 	(function (){
-		document.write('this executed without a call');
+		document.write('this executed without a call<hr>');
 	})();
-
-	//this refers to an instance
-	function myFunction(){
-		return this;
-	};
-	console.log(myFunction());
-	document.write('<hr>');
 
 	//Loops
 	document.write('<b>loops execute a set amount of times</b><br>');
 	//basic for loop example
 	document.write('<b>For loop example 1</b><br>');
-	
-	
+
 	for(var i = 0; i < 10; ++i){
 		document.write(i + '<br>');
 	};
@@ -338,34 +326,34 @@
 	document.write('<hr>');
 
 	//another example
-	document.write('<b>For loop example 2</b><br>');
+	document.write('<b>For/in loop</b><br>');
 	beers=['corona', 'modelo', 'heineken', 'bud'];
-	for (var i = 0; i < beers.length; ++i){
+	for (i in beers){
 		document.write(i +': '+ beers[i] +'<br>');
 	}
 	document.write('<hr>');
 
 	//while loop
 	document.write('<b>While loop example</b><br>');
-	var bi = 0;
-	while(bi < beers.length){
-		document.write(bi +': '+ beers[bi] +'<br>');
-		++bi;
+	var i = 0;
+	while(i < beers.length){
+		document.write(i +': '+ beers[i] +'<br>');
+		++i;
 	};
 	document.write('<hr>');
 
 	//do while loop
 	document.write('<b>Do/While loop example</b><br>');
-	var bidx= 0;
+	var i= 0;
 	do{
-		document.write(bidx +': '+ beers[bidx] +'<br>');
-		++bidx;
+		document.write(i +': '+ beers[i] +'<br>');
+		++i;
 	}
-	while(bidx < beers.length);
+	while(i < beers.length);
 	document.write('<hr>');
 
 	//for/in loop
-	document.write('<b>For/In loop example</b><br>');
+	document.write('<b>For/In loop with Objects</b><br>');
 	person = {
 		fname:'Peter',
 		lname:'Parker',
@@ -375,7 +363,6 @@
 	for(k in person){
 		document.write(person[k] + '<br>');
 	}
-	document.write('<hr>');
 </script>
 </body>
 </html>
